@@ -20,11 +20,11 @@ export default function (server, mongoose) {
     try {
       res.json(await User.find());  // Uses Mongoose's "find"-method to get all "users".
     } catch (error) {
-      res.status(500).json({ message: "An error occured on the server while getting the users." });
+      res.status(500).json({ message: "An error occured on the server while retrieving the users." });
     }
   });
 
-  // Creates a GET-route to fetch a specific user with a specific ID.
+  // Creates a GET-route to retrieve a specific user with a specific ID.
   server.get('/api/users/:id', async (req, res) => {
     try {
       const user = await User.findById(req.params.id); // Fetches user with ID from the database.
@@ -33,7 +33,7 @@ export default function (server, mongoose) {
       }
       res.json(user);
     } catch (error) {
-      res.status(500).json({ message: "An error occured on the server while fetching user." });
+      res.status(500).json({ message: "An error occured on the server while retrieving user." });
     }
   });
 

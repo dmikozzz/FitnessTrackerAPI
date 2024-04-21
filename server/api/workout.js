@@ -15,16 +15,24 @@ export default function (server, mongoose) {
  */
 const Workout = mongoose.model("Workout", workoutSchema);
 
-  // Create a GET-route to fetch all workouts.
-  server.get('/api/workouts', async (req, res) => {
-    try {
-      const workouts = await Workout.find();
-      res.json(workouts);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: "An error occured on the server while fetching workout" });
+  // Create a GET-route to retrieve all workouts.
+ server.get('/api/workouts', async (req, res) => {
+  try {
+    const workoutType = req.query.type; // Retrieve the type query from the request
+    let query = {}; //Empty query type will show all workouts
+
+    // If a type is specified modify the query to show only that kind of workout
+    if (workoutType) {
+      query.workout = workoutType;
     }
-  });
+
+    const workouts = await Workout.find(query); // Filter workouts with the input query
+    res.json(workouts);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "An error occurred on the server while retrieving workouts" });
+  }
+});
 
   // Create a GET-route to get a specific workout ID.
   server.get('/api/workouts/:id', async (req, res) => {
@@ -36,7 +44,7 @@ const Workout = mongoose.model("Workout", workoutSchema);
       res.json(workout);
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: "An error occured on the server while fetching workout" });
+      res.status(500).json({ message: "An error occured on the server while retrieving workout" });
     }
   });
 
