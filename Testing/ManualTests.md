@@ -55,6 +55,26 @@ example users:
 #
 ## 5. Verify that the API returns paginated results when a large number of records are requested.
 #
+- #### Steps:
+1. Send a GET request to: http://localhost:3000/api/workouts?page=2&limit=10
+- #### Expected:
+- To start on page 2 and return 10 workouts.
+- #### Result:
+- Returned the expected workouts
+``` 
+Example: 
+{[{...}]
+    "totalDocs": 21,
+    "limit": 10,
+    "totalPages": 3,
+    "page": 2,
+    "pagingCounter": 11,
+    "hasPrevPage": true,
+    "hasNextPage": true,
+    "prevPage": 1,
+    "nextPage": 3
+}
+```
 
 ## 6. Check if the API handles special characters and non-English text correctly in input data and returned responses.
 #
