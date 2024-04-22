@@ -1,3 +1,5 @@
+import mongoosePaginate from 'mongoose-paginate-v2';
+
 export default function (server, mongoose) {
 
   // Creates a schema for "workout" that defines the structure for the "workout"-document in the database.
@@ -13,26 +15,33 @@ export default function (server, mongoose) {
    Creates a Mongoose-model based on the workoutSchema. 
    This makes it possible for us to create, read, update and delete documents in our "workout"-collection. (CRUD)
  */
+
+workoutSchema.plugin(mongoosePaginate);
 const Workout = mongoose.model("Workout", workoutSchema);
 
   // Create a GET-route to retrieve all workouts.
- server.get('/api/workouts', async (req, res) => {
-  try {
-    const workoutType = req.query.type; // Retrieve the type query from the request
-    let query = {}; //Empty query type will show all workouts
+  server.get('/api/workouts', async (req, res) => {
+    try {
+      const { page = 1, limit = 10, type } = req.query; // Returns first page with a limit of 10 workouts.
 
-    // If a type is specified modify the query to show only that kind of workout
-    if (workoutType) {
-      query.workout = workoutType;
+      let query = {}; //Empty query type will show all workouts
+      if (type) {
+        query.workout = type; // If a type is specified modify the query to show only that kind of workout
+      }
+
+      const options = {
+        page: page, // Page and limit of choice
+        limit: limit,
+      };
+
+      const workouts = await Workout.paginate(query, options); // Use paginate method and filter workouts with the input query
+      res.json(workouts); 
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "An error occurred on the server while retrieving workouts" });
     }
+  });
 
-    const workouts = await Workout.find(query); // Filter workouts with the input query
-    res.json(workouts);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "An error occurred on the server while retrieving workouts" });
-  }
-});
 
   // Create a GET-route to get a specific workout ID.
   server.get('/api/workouts/:id', async (req, res) => {
