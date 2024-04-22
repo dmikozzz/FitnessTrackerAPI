@@ -18,11 +18,21 @@ export default function (server, mongoose) {
   */
   server.get('/api/users', async (req, res) => {
     try {
-      res.json(await User.find());  // Uses Mongoose's "find"-method to get all "users".
+      const { name } = req.query; // Retrieve the name from query parameters
+      let query = {};
+
+      if (name) {
+        query.name = name; // Exact match 
+      }
+
+      const users = await User.find(query); // Use the query to filter users else show all users
+      res.json(users);
     } catch (error) {
-      res.status(500).json({ message: "An error occured on the server while retrieving the users." });
+      console.error(error);
+      res.status(500).json({ message: "An error occurred on the server while retrieving the users." });
     }
   });
+
 
   // Creates a GET-route to retrieve a specific user with a specific ID.
   server.get('/api/users/:id', async (req, res) => {
