@@ -1,4 +1,4 @@
-## Manual testing
+## MANUAL TESTING
 #### This is a collection of the 13 manual tests for this project.
 #
 **TO BE UPDATED**
@@ -78,8 +78,55 @@ Example:
 
 ## 6. Check if the API handles special characters and non-English text correctly in input data and returned responses.
 #
+- #### Steps:
+1. Send a GET request to: http://localhost:3000/api/users?name=Björn%20Jönsson
+
+- #### Expected:
+- To return the requested user
+- #### Result:
+- Returned the requested user
+ ```
+ example:
+[
+    {
+        "_id": "6626a2fe768c4484dae0a3df",
+        "name": "Björn Jönsson",
+        "dailyActiveCaloriesGoal": 1400,
+        "__v": 0
+    }
+]
+```
+
 ## 7. Test the API’s response when sending concurrent requests to ensure that it can handle multiple users and maintain data consistency.
 #
+- #### Steps:
+```
+ The following GET and POST request with 5 iterations and 0 ms delay.
+```
+1. Send a GET request to: http://localhost:3000/API/users
+2. Send a GET request to: http://localhost:3000/API/workouts
+3. Send a GET request to: http://localhost:3000/API/kyh
+4. Send a GET request to: http://localhost:3000/api/workouts?type=Hiking
+5. Send a POST request to: http://localhost:3000/API/workouts/
+6. Send a POST request to: http://localhost:3000/API/users
+- #### Expected:
+1. Status 200 OK
+2. Status 200 OK
+3. Status 404 Not Found
+4. Status 200 OK
+5. Status 201 Created
+6. Status 201 Created
+- #### Result:
+1. Status 200 OK
+2. Status 200 OK
+3. Status 404 Not Found
+4. Status 200 OK
+5. Status 201 Created
+6. Status 201 Created
+```
+Got the expected results with a total running duration of 2s and 988ms.
+```
+
 ## 8. Test if the API correctly handles different HTTP methods (GET, POST, PUT, DELETE) for each endpoint and returns appropriate status codes and responses for each method.
 #
 ## 9. Check if the API correctly handles updates to existing records, ensuring that changes are saved and reflected in subsequent requests.
