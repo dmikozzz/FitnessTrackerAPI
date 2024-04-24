@@ -129,10 +129,57 @@ Got the expected results with a total running duration of 2s and 988ms.
 
 ## 8. Test if the API correctly handles different HTTP methods (GET, POST, PUT, DELETE) for each endpoint and returns appropriate status codes and responses for each method.
 #
+- #### Steps:
+1. Send a GET request to: http://localhost:3000/API/users/
+2. Send a POST request to: http://localhost:3000/API/workouts/
+3. Send a PUT request to: http://localhost:3000/API/workouts/66291e20c13e4c39a807938a
+4. Send a DELETE request to: http://localhost:3000/API/workouts/66291e20c13e4c39a807938a
+```
+example: Workout ID: 66291e20c13e4c39a807938a
+The ID I wanted to updated / delete.
+```
+- #### Expected:
+- Status 200 OK
+- Status 201 Created
+- Status 200 OK with the updated json showing in body
+- Status 200 OK
+- #### Result:
+- Status 200 OK
+- Status 201 Created shows the created workout and its ID in body.
+- Status 200 OK Body also shows the update we did due to having { new: true } in our PUT route.
+- Status 200 with a message in body that says "Workout has been removed!".
+
+
 ## 9. Check if the API correctly handles updates to existing records, ensuring that changes are saved and reflected in subsequent requests.
-#
+# 
+- #### Steps:
+1. Send a GET request for specific workout: http://localhost:3000/API/workouts/66292046c13e4c39a807939a
+2. Send a PUT request for that workout: http://localhost:3000/API/workouts/66292046c13e4c39a807939a
+3. Send a new GET request to check update. http://localhost:3000/API/workouts/66292046c13e4c39a807939a
+- #### Expected:
+- Status 200 OK
+- Status 200 OK
+- Status 200 OK
+- #### Result:
+- 200 OK shows us the workout we wanted.
+- 200 OK updated the workout and even shows the updated workout in body.
+- 200 OK just to confirm that it's correctly updated which it is.
 ## 10. Test the API’s performance under heavy load, simulating a large number of users making requests simultaneously.
 #
+- #### Steps:
+```
+5 different GET request with 50 iterations. 
+```
+1. Send a GET request to: http://localhost:3000/API/users
+2. Send a GET request to: http://localhost:3000/API/workouts
+3. Send a GET request to: http://localhost:3000/API/users/661e8b4deab5230c94b30812
+4. Send a GET request to: http://localhost:3000/API/workouts/6621b9a77ccb9ffd050ccaab
+5. Send a GET request to: http://localhost:3000/api/workouts?type=Outdoor%20Cycle
+- #### Expected:
+- The requests to takes some time to finish.
+- #### Result:
+ - Got the expected results after a total running duration of 20s and 718ms.
+
 ## 11. Verify that the API can recover gracefully from failures, such as database connection issues without compromising data integrity.
 #
 ## 12. Test the API’s ability to handle edge cases, such as requests with missing or invalid parameters, and ensure that appropriate error messages are returned.
