@@ -8,9 +8,9 @@
 1. Send a GET request to: http://localhost:3000/API/users
 2. Send a GET request to: http://localhost:3000/API/workouts
 - #### Expected:
-- Status: 200 OK 
+  Status: 200 OK 
 - #### Result:
--  Status: 200 OK
+  Status: 200 OK
 #
 
 ## 2. Check if the API returns the expected data format (e.g., JSON, XML) in the response.
@@ -18,9 +18,9 @@
 1. Send a GET request to: http://localhost:3000/API/users
 2. Send a GET request to: http://localhost:3000/API/workouts
 - #### Expected:
-- Body to contain JSON-format
+  Body to contain JSON-format
 - #### Result:
-- Body contained the correct JSON-format 
+  Body contained the correct JSON-format 
 ``` 
 example users: 
 [    
@@ -36,22 +36,22 @@ example users:
 #
 3. Ensure that the API returns the correct HTTP status code (e.g., 400 Bad Request) for an invalid request.
 - #### Steps:
-- Send a GET request to: http://localhost:3000/API/kyh
+  Send a GET request to: http://localhost:3000/API/kyh
 
 - #### Expected:
-- Status: 404 Not Found 
+  Status: 404 Not Found 
 - #### Result: 
-- Status 404 Not Found
+  Status 404 Not Found
 
 
 #
 ## 4. Test if the API returns the correct data when querying with specific filters or search criteria.
 - #### Steps:
-1. Send a GET request to: http://localhost:3000/api/workouts?type=Hiking
+  Send a GET request to: http://localhost:3000/api/workouts?type=Hiking
 - #### Expected:
-- To return only workouts with the workout type "Hiking"
+  To return only workouts with the workout type "Hiking"
 - #### Result:
-- Returned workouts with the type "Hiking"
+  Returned workouts with the type "Hiking"
 #
 ## 5. Verify that the API returns paginated results when a large number of records are requested.
 #
