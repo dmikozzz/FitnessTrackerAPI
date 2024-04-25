@@ -2,8 +2,8 @@ export default function (server, mongoose) {
   let connected = true // database connected
   // Creates a schema for "users" that defines the structure for "users"-document in the database.
   const usersSchema = new mongoose.Schema({
-    name: String,  // Every "user" will have a "name". 
-    dailyActiveCaloriesGoal: Number // daily goal for the user
+    name: { type: String, required:true },  // Every "user" will have a "name". 
+    dailyActiveCaloriesGoal: { type: Number, required:true } // daily goal for the user
   });
 
   /* 
