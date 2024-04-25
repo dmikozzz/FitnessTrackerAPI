@@ -1,5 +1,5 @@
 export default function (server, mongoose) {
-
+  let connected = true // database connected
   // Creates a schema for "users" that defines the structure for "users"-document in the database.
   const usersSchema = new mongoose.Schema({
     name: String,  // Every "user" will have a "name". 
@@ -24,6 +24,19 @@ export default function (server, mongoose) {
       if (name) {
         query.name = name; // Exact match 
       }
+        if (req.query.disconnect === 'true') { // if query request for disconnect=true our database will stop being connected.
+          if (connected) {
+            await mongoose.disconnect();
+            connected = false;
+            console.log("Database connection now offline.");
+          }
+        } else {
+          if (!connected) { //reconnect if not connected
+            await mongoose.connect("mongodb+srv://duricmitar:12345kyh@cluster0.u0p0rie.mongodb.net/");
+            connected = true;
+            console.log("Database connection back online.");
+          }
+        }
 
       const users = await User.find(query); // Use the query to filter users else show all users
       res.json(users);
