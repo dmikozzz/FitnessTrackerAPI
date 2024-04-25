@@ -182,8 +182,34 @@ The ID I wanted to updated / delete.
 
 ## 11. Verify that the API can recover gracefully from failures, such as database connection issues without compromising data integrity.
 #
+- #### Steps:
+1. Send a GET request to: http://localhost:3000/api/users?disconnect=true 
+2. Send a GET request to: http://localhost:3000/api/users?disconnect=false
+- #### Expected:
+- Status 500 Internal Server Error
+- Database connection offline.
+- Status 200 OK
+- Database connection back online.
+- Database back to showing all users.
+- #### Result:
+- Status 500 Internal Server Error
+- Database connection offline.
+- Status 200 OK
+- Database connection back online.
+- Database working as intended showing all users.
+
+
 ## 12. Test the API’s ability to handle edge cases, such as requests with missing or invalid parameters, and ensure that appropriate error messages are returned.
 #
+- #### Steps:
+1. Send a GET request to: http://localhost:3000/api/workouts?type=Sleeping
+
+- #### Expected:
+- Status 404
+- No workouts of this type found.
+- #### Result:
+- Status 404
+- No workouts of this type found.
 ## 13. Verify that the API correctly implements rate limiting or throttling mechanisms to prevent abuse or excessive use of resources.
 
 - #### Steps:

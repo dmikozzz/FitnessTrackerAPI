@@ -35,6 +35,9 @@ const Workout = mongoose.model("Workout", workoutSchema);
       };
 
       const workouts = await Workout.paginate(query, options); // Use paginate method and filter workouts with the input query
+      if (workouts.docs.length === 0) { // if the requested workout is not exisitng return msg.
+        return res.status(404).json({ message: "No workouts of this type found." });
+      }
       res.json(workouts); 
     } catch (error) {
       console.error(error);
