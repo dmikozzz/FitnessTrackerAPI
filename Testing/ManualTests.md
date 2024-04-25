@@ -213,9 +213,12 @@ The ID I wanted to updated / delete.
 ## 13. Verify that the API correctly implements rate limiting or throttling mechanisms to prevent abuse or excessive use of resources.
 
 - #### Steps:
-1. 
-2. 
+```
+ran 52 Iterations of two get requests while our limit is at 100.
+```
+1. Send a GET request to: http://localhost:3000/API/users
+2. Send a GET request to: http://localhost:3000/API/workouts
 - #### Expected:
-- 
+- Status 429 Too Many Requests after 100 requests.
 - #### Result:
-- 
+- Status 429 Too Many Requests for the last four requests.
