@@ -8,9 +8,9 @@
 1. Send a GET request to: http://localhost:3000/API/users
 2. Send a GET request to: http://localhost:3000/API/workouts
 - #### Expected:
-  Status: 200 OK 
+- Status: 200 OK 
 - #### Result:
-  Status: 200 OK
+- Status: 200 OK
 #
 
 ## 2. Check if the API returns the expected data format (e.g., JSON, XML) in the response.
@@ -18,9 +18,9 @@
 1. Send a GET request to: http://localhost:3000/API/users
 2. Send a GET request to: http://localhost:3000/API/workouts
 - #### Expected:
-  Body to contain JSON-format
+- Body to contain JSON-format
 - #### Result:
-  Body contained the correct JSON-format 
+- Body contained the correct JSON-format 
 ``` 
 example users: 
 [    
@@ -32,35 +32,34 @@ example users:
     }
 ]
 ```
-
 #
-3. Ensure that the API returns the correct HTTP status code (e.g., 400 Bad Request) for an invalid request.
+# 3. Ensure that the API returns the correct HTTP status code (e.g., 400 Bad Request) for an invalid request.
 - #### Steps:
-  Send a GET request to: http://localhost:3000/API/kyh
+- Send a GET request to: http://localhost:3000/API/kyh
 
 - #### Expected:
-  Status: 404 Not Found 
+ - Status: 404 Not Found 
 - #### Result: 
-  Status 404 Not Found
+ - Status 404 Not Found
 
 
 #
 ## 4. Test if the API returns the correct data when querying with specific filters or search criteria.
 - #### Steps:
-  Send a GET request to: http://localhost:3000/api/workouts?type=Hiking
+ - Send a GET request to: http://localhost:3000/api/workouts?type=Hiking
 - #### Expected:
-  To return only workouts with the workout type "Hiking"
+- To return only workouts with the workout type "Hiking"
 - #### Result:
-  Returned workouts with the type "Hiking"
+ - Returned workouts with the type "Hiking"
 #
 ## 5. Verify that the API returns paginated results when a large number of records are requested.
-#
+
 - #### Steps:
-1. Send a GET request to: http://localhost:3000/api/workouts?page=2&limit=10
+- Send a GET request to: http://localhost:3000/api/workouts?page=2&limit=10
 - #### Expected:
-- To start on page 2 and return 10 workouts.
+ - To start on page 2 and return 10 workouts.
 - #### Result:
-- Returned the expected workouts
+ - Returned the expected workouts
 ``` 
 Example: 
 {[{...}]
@@ -75,16 +74,16 @@ Example:
     "nextPage": 3
 }
 ```
-
-## 6. Check if the API handles special characters and non-English text correctly in input data and returned responses.
 #
+## 6. Check if the API handles special characters and non-English text correctly in input data and returned responses.
+
 - #### Steps:
-1. Send a GET request to: http://localhost:3000/api/users?name=Björn%20Jönsson
+- Send a GET request to: http://localhost:3000/api/users?name=Björn%20Jönsson
 
 - #### Expected:
-- To return the requested user
+ - To return the requested user
 - #### Result:
-- Returned the requested user
+ - Returned the requested user
  ```
  example:
 [
@@ -96,9 +95,9 @@ Example:
     }
 ]
 ```
-
-## 7. Test the API’s response when sending concurrent requests to ensure that it can handle multiple users and maintain data consistency.
 #
+## 7. Test the API’s response when sending concurrent requests to ensure that it can handle multiple users and maintain data consistency.
+
 - #### Steps:
 ```
  The following GET and POST request with 5 iterations and 0 ms delay.
@@ -126,9 +125,9 @@ Example:
 ```
 Got the expected results with a total running duration of 2s and 988ms.
 ```
-
-## 8. Test if the API correctly handles different HTTP methods (GET, POST, PUT, DELETE) for each endpoint and returns appropriate status codes and responses for each method.
 #
+## 8. Test if the API correctly handles different HTTP methods (GET, POST, PUT, DELETE) for each endpoint and returns appropriate status codes and responses for each method.
+
 - #### Steps:
 1. Send a GET request to: http://localhost:3000/API/users/
 2. Send a POST request to: http://localhost:3000/API/workouts/
@@ -151,7 +150,7 @@ The ID I wanted to updated / delete.
 
 
 ## 9. Check if the API correctly handles updates to existing records, ensuring that changes are saved and reflected in subsequent requests.
-# 
+ 
 - #### Steps:
 1. Send a GET request for specific workout: http://localhost:3000/API/workouts/66292046c13e4c39a807939a
 2. Send a PUT request for that workout: http://localhost:3000/API/workouts/66292046c13e4c39a807939a
@@ -178,10 +177,10 @@ The ID I wanted to updated / delete.
 - #### Expected:
 - The requests to takes some time to finish.
 - #### Result:
- - Got the expected results after a total running duration of 20s and 718ms.
-
-## 11. Verify that the API can recover gracefully from failures, such as database connection issues without compromising data integrity.
+- Got the expected results after a total running duration of 20s and 718ms.
 #
+## 11. Verify that the API can recover gracefully from failures, such as database connection issues without compromising data integrity.
+
 - #### Steps:
 1. Send a GET request to: http://localhost:3000/api/users?disconnect=true 
 2. Send a GET request to: http://localhost:3000/api/users?disconnect=false
@@ -198,9 +197,9 @@ The ID I wanted to updated / delete.
 - Database connection back online.
 - Database working as intended showing all users.
 
-
-## 12. Test the API’s ability to handle edge cases, such as requests with missing or invalid parameters, and ensure that appropriate error messages are returned.
 #
+## 12. Test the API’s ability to handle edge cases, such as requests with missing or invalid parameters, and ensure that appropriate error messages are returned.
+
 - #### Steps:
 1. Send a GET request to: http://localhost:3000/api/workouts?type=Sleeping
 
@@ -210,6 +209,7 @@ The ID I wanted to updated / delete.
 - #### Result:
 - Status 404
 - No workouts of this type found.
+#
 ## 13. Verify that the API correctly implements rate limiting or throttling mechanisms to prevent abuse or excessive use of resources.
 
 - #### Steps:
@@ -219,6 +219,8 @@ ran 52 Iterations of two get requests while our limit is at 100.
 1. Send a GET request to: http://localhost:3000/API/users
 2. Send a GET request to: http://localhost:3000/API/workouts
 - #### Expected:
-- Status 429 Too Many Requests after 100 requests.
+-  Status 429 Too Many Requests after 100 requests.
 - #### Result:
-- Status 429 Too Many Requests for the last four requests.
+-  Status 429 Too Many Requests for the last four requests.
+  
+#
