@@ -108,4 +108,194 @@ This would lead to not being able to retrieve the users from the API.
 By doing any other request the database will automatically reconnect.
 
 > GET http://localhost:3000/api/users?disconnect=false will also work to turn the database connection back online.
+#
+## Workout
+ The workouts API and its functions.
 
+#### GET
+We can do a simple GET for workouts.
+>Example: GET http://localhost:3000/API/workouts
+```
+Response:  
+ {
+    "docs": [
+        other workouts...{
+            "_id": "6621b9a77ccb9ffd050ccab3",
+            "userId": "661e8b4deab5230c94b30813",
+            "workout": "Outdoor Walk",
+            "steps": 3000,
+            "distance": 2.2,
+            "caloriesBurned": 180
+        }
+    ],
+    "totalDocs": 25,
+    "limit": 10,
+    "totalPages": 3,
+    "page": 1,
+    "pagingCounter": 1,
+    "hasPrevPage": false,
+    "hasNextPage": true,
+    "prevPage": null,
+    "nextPage": 2
+}
+Workouts will default to page 1 and a limit of 10 unless we provide page or limit parameters.
+```
+
+
+It's also possible to do a GET for a specific workout id,
+
+>Example: GET http://localhost:3000/API/workouts/6621b9a77ccb9ffd050ccaab
+```
+Response:
+{
+    "_id": "6621b9a77ccb9ffd050ccaab",
+    "userId": "661e8b4deab5230c94b3080d",
+    "workout": "Outdoor Run",
+    "steps": 5000,
+    "distance": 5,
+    "caloriesBurned": 450
+}
+```
+
+
+If we want to get let's say page 3 and a limit of 1 workout or request would look like
+>Example: GET http://localhost:3000/api/workouts?page=3&limit=1
+```
+Response:
+{
+    "docs": [
+        {
+            "_id": "6621b9a77ccb9ffd050ccaac",
+            "userId": "661e8b4deab5230c94b30812",
+            "workout": "Hiking",
+            "steps": 8000,
+            "distance": 6,
+            "caloriesBurned": 600
+        }
+    ],
+    "totalDocs": 25,
+    "limit": 1,
+    "totalPages": 25,
+    "page": 3,
+    "pagingCounter": 3,
+    "hasPrevPage": true,
+    "hasNextPage": true,
+    "prevPage": 2,
+    "nextPage": 4
+} 
+The paginate updates the total pages according to our requested parameters with what page we are on and pagingCounter is telling us that it's the third workout from our workout API.
+```
+   ```
+    "hasPrevPage": true, a previous page exist if true
+    "hasNextPage": true, next page exist if true
+    "prevPage": 2, what the previous page would be
+    "nextPage": 4 what the next page would be
+```
+
+The API can handle if we want to search for a specific workout. Keep in mind that it can only handle an exact match and existing workout.
+>Example: GET http://localhost:3000/api/workouts?type=Outdoor%20Cycle
+
+The API would respond with workouts that have the workout type Outdoor Cycle.  
+```
+Response:
+        {
+            "_id": "6621b9a77ccb9ffd050ccaad",
+            "userId": "661e8b4deab5230c94b30814",
+            "workout": "Outdoor Cycle",
+            "steps": 0,
+            "distance": 15,
+            "caloriesBurned": 350
+        },
+        {
+            "_id": "6621b9a77ccb9ffd050ccaba",
+            "userId": "661e8b4deab5230c94b3080e",
+            "workout": "Outdoor Cycle",
+            "steps": 0,
+            "distance": 12,
+            "caloriesBurned": 300
+        }
+```
+If we search for an workout that doesn't exist or we don't have an exact match we will get an message and a status of 404 Not Found.
+> Example: GET http://localhost:3000/api/workouts?type=Sleeping
+
+```
+Response:
+{
+    "message": "No workouts of this type found."
+}
+```
+#### POST
+
+ We can post workouts but keep in mind to follow the structure of a workout.
+  ```
+  example:
+  {
+  "userId": "6621d4c08eba0d0cadb45b2f",
+  "workout": "Outdoor Run",
+  "steps": 5000,
+  "distance": 5,
+  "caloriesBurned": 450
+}
+ ```
+ >Example: POST http://localhost:3000/API/workouts/
+   ```
+   The body as raw JSON
+   {
+  "userId": "6621d4c08eba0d0cadb45b2f",
+  "workout": "Outdoor Run",
+  "steps": 5000,
+  "distance": 5,
+  "caloriesBurned": 450
+} 
+This would create a new workout for the user 6621d4c08eba0d0cadb45b2f
+It's not required to provide all these details but that would be a boring workout if there's no information about it or if we make the workout but without userId then we wouldn't know the user behind that amazing workout.
+
+```
+
+#### PUT 
+We can also update our workout but we need to provide the id we want to update.
+>Example: PUT http://localhost:3000/API/workouts/662c2feb990b891e8609dd9f
+
+```
+We follow the already existing structure and update our caloriesBurned to 550.
+Body as raw JSON
+{
+  "userId": "6621d4c08eba0d0cadb45b2f",
+  "workout": "Outdoor Run",
+  "steps": 5000,
+  "distance": 5,
+  "caloriesBurned": 550
+}
+
+Response: 
+{
+    "_id": "662c2feb990b891e8609dd9f",
+    "userId": "6621d4c08eba0d0cadb45b2f",
+    "workout": "Outdoor Run",
+    "steps": 5000,
+    "distance": 5,
+    "caloriesBurned": 550,
+    "__v": 0
+} Due to having { new: true } in the PUT route in workout.js the response we get is the updated version otherwise we would see the previous version of the workout with "caloriesBurned": 450 instead of 550.
+
+```
+
+#### DELETE
+It is possible to delete a workout if we include the id.
+> Example: DELETE http://localhost:3000/API/workouts/662c2feb990b891e8609dd9f
+```
+Response: 
+{
+    "message": "Workout has been removed!"
+}
+```
+#
+## Other information 
+
+#### Rate limit
+
+This project has a rate limit of 300 request every 15 minutes in the server.js
+if that's something you need to change you will find it in row 15 in the server.js file.
+
+What happens if you exceed 300 requests is that simply the API will respond with a message that says
+>Too many requests from this IP, please try again in a while.

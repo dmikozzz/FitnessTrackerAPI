@@ -148,7 +148,7 @@ The ID I wanted to updated / delete.
 - Status 200 OK Body also shows the update we did due to having { new: true } in our PUT route.
 - Status 200 with a message in body that says "Workout has been removed!".
 
-
+#
 ## 9. Check if the API correctly handles updates to existing records, ensuring that changes are saved and reflected in subsequent requests.
  
 - #### Steps:
@@ -163,8 +163,9 @@ The ID I wanted to updated / delete.
 - 200 OK shows us the workout we wanted.
 - 200 OK updated the workout and even shows the updated workout in body.
 - 200 OK just to confirm that it's correctly updated which it is.
-## 10. Test the API’s performance under heavy load, simulating a large number of users making requests simultaneously.
 #
+## 10. Test the API’s performance under heavy load, simulating a large number of users making requests simultaneously.
+
 - #### Steps:
 ```
 5 different GET request with 50 iterations. 
