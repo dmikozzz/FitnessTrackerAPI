@@ -1,8 +1,6 @@
 ## AUTOMATED TESTING
 #### This is a collection of the automated tests for this project.
 #
-**TO BE UPDATED**
-#
 ## 1.  Status Code 200 Verify that the API returns the correct HTTP status code (e.g., 200 OK) for a successful GET request.
 - #### Steps:
 1. Send a GET request to: http://localhost:3000/API/users
@@ -17,9 +15,14 @@ pm.test("Status code is 200", function () {
 - Status: 200 OK 
 - #### Result:
 - Status: 200 OK
-#
 
-## 2. Check if the API returns the expected data format (e.g., JSON, XML) in the response.
+### Test Details
+**Location**   
+ Fitness Tracker API > Automated tests >  01. Status 200  
+**Purpose**  
+This test confirms that the API endpoints are operational and accessible.
+#
+## 2. Verify that the API returns the expected data format (e.g., JSON, XML) in the response.
 - #### Steps:
 1. Send a GET request to: http://localhost:3000/API/users
 2. Send a GET request to: http://localhost:3000/API/workouts
@@ -38,8 +41,13 @@ example users:
     }
 ]
 ```
+### Test Details
+**Location**   
+ Fitness Tracker API > Automated tests >  02. Expected data
+**Purpose**  
+This test ensures that the API returns data in a JSON format.
 #
-# 3. Ensure that the API returns the correct HTTP status code (e.g., 400 Bad Request) for an invalid request.
+# 3. Ensure that the API returns the correct HTTP status code (e.g., 400 Bad Request) for an invalid requests.
 - #### Steps:
 - Send a GET request to: http://localhost:3000/API/kyh
 
@@ -48,17 +56,30 @@ example users:
 - #### Result: 
  - Status 404 Not Found
 
+ ### Test Details
+**Location**   
+ Fitness Tracker API > Automated tests >  03. Bad request  
+**Purpose**  
+This test ensures that the API responds to invalid endpoints with Status 404 Not Found.
 
 #
-## 4. Test if the API returns the correct data when querying with specific filters or search criteria.
+## 4. Create an automated test that sends a request with specific filters or search criteria and checks if the API returns the correct data.
 - #### Steps:
  - Send a GET request to: http://localhost:3000/api/workouts?type=Hiking
 - #### Expected:
 - To return only workouts with the workout type "Hiking"
 - #### Result:
  - Returned workouts with the type "Hiking"
+
+ ### Test Details
+**Location**   
+ Fitness Tracker API > Automated tests >  04. Specific query  
+**Purpose**  
+This test verifies the API ability to filter data based on specific query parameters and  
+ensures it returns the requested workouts.
+
 #
-## 5. Verify that the API returns paginated results when a large number of records are requested.
+## 5. Write an automated test to verify that the API returns paginated results when a large number of records are requested
 
 - #### Steps:
   Send a GET request to: http://localhost:3000/api/workouts?page=2&limit=10
@@ -80,8 +101,14 @@ Example:
     "nextPage": 3
 }
 ```
+### Test Details
+**Location**   
+ Fitness Tracker API > Automated tests >  05. Paginate & limit  
+**Purpose**  
+This test ensures that the API implements pagination and returns specified data.
+
 #
-## 6. Check if the API handles special characters and non-English text correctly in input data and returned responses.
+## 6. Test if the API handles special characters and non-English text correctly in input data and returned responses using an automated testing tool.
 
 - #### Steps:
 - Send a GET request to: http://localhost:3000/api/users?name=Björn%20Jönsson
@@ -101,8 +128,14 @@ Example:
     }
 ]
 ```
+### Test Details
+**Location**   
+ Fitness Tracker API > Automated tests >  06. Special characters  
+**Purpose**  
+This test ensures that the API can process and respond to a request containing special characters.
+
 #
-## 7. Test the API’s response when sending concurrent requests to ensure that it can handle multiple users and maintain data consistency.
+## 7. Develop an automated test that sends concurrent requests to the API to ensure that it can handle multiple users and maintain data consistency.
 
 - #### Steps:
 ```
@@ -131,8 +164,18 @@ Example:
 ```
 Got the expected results with a total running duration of 2s and 988ms.
 ```
+### Test Details
+**Location**   
+ Fitness Tracker API > Automated tests >  07. Multiple requests  
+**Purpose**  
+To ensure that the API can handle concurrent request while maintaining data consistency under load.
+**Other information**  
+Did a functional test instead of a performance test due to it showing many errors,  
+because there is a rate limit of 300.  
+
+
 #
-## 8. Test if the API correctly handles different HTTP methods (GET, POST, PUT, DELETE) for each endpoint and returns appropriate status codes and responses for each method.
+## 8. Create an automated test and test if the API correctly handles different HTTP methods (GET, POST, PUT, DELETE) for each endpoint and returns appropriate status codes and responses for each method.
 
 - #### Steps:
 1. Send a GET request to: http://localhost:3000/API/users/
@@ -153,9 +196,13 @@ The ID I wanted to updated / delete.
 - Status 201 Created shows the created workout and its ID in body.
 - Status 200 OK Body also shows the update we did due to having { new: true } in our PUT route.
 - Status 200 with a message in body that says "Workout has been removed!".
-
-
-## 9. Check if the API correctly handles updates to existing records, ensuring that changes are saved and reflected in subsequent requests.
+### Test Details
+**Location**   
+ Fitness Tracker API > Automated tests >  08. Different HTTP methods  
+**Purpose**  
+This test ensures the correct status codes and messages for various HTTP methods.
+#
+## 9. Write an automated test to check if the API correctly handles updates to existing records, ensuring that changes are saved and reflected in subsequent requests.
  
 - #### Steps:
 1. Send a GET request for specific workout: http://localhost:3000/API/workouts/66292046c13e4c39a807939a
@@ -169,11 +216,18 @@ The ID I wanted to updated / delete.
 - 200 OK shows us the workout we wanted.
 - 200 OK updated the workout and even shows the updated workout in body.
 - 200 OK just to confirm that it's correctly updated which it is.
-## 10. Test the API’s performance under heavy load, simulating a large number of users making requests simultaneously.
+### Test Details
+**Location**   
+ Fitness Tracker API > Automated tests >  09. Update correctly  
+**Purpose**  
+This test verifies that the API accurately updates and correctly applies the changes.
+
 #
+## 10. Design an automated performance test that simulates a large number of users making requests simultaneously to check the API’s performance under heavy load.
+
 - #### Steps:
 ```
-5 different GET request with 50 iterations. 
+5 different GET request with 50 iterations.
 ```
 1. Send a GET request to: http://localhost:3000/API/users
 2. Send a GET request to: http://localhost:3000/API/workouts
@@ -184,8 +238,20 @@ The ID I wanted to updated / delete.
 - The requests to takes some time to finish.
 - #### Result:
 - Got the expected results after a total running duration of 20s and 718ms.
+
+### Test Details
+**Location**   
+ Fitness Tracker API > Automated tests > 10. Simultaneous requests   
+**Purpose**  
+This test shows that the API can sustain performance and reliability under heavy load.  
+**Other information**  
+Did a functional test instead of a performance test due to it showing many errors,  
+because there is a rate limit of 300.  
+But for the sake of it running a performance test with 20 users for a minute would result in 4007 total request sent.
+
+
 #
-## 11. Verify that the API can recover gracefully from failures, such as database connection issues without compromising data integrity.
+## 11. Create an automated test that verifies the API can recover gracefully from failures, such as database connection issues or third-party service outages, without compromising data integrity.
 
 - #### Steps:
 1. Send a GET request to: http://localhost:3000/api/users?disconnect=true 
@@ -203,8 +269,14 @@ The ID I wanted to updated / delete.
 - Database connection back online.
 - Database working as intended showing all users.
 
+### Test Details
+**Location**   
+Fitness Tracker API > Automated tests > 11. Connection  
+**Purpose**  
+This test ensures that the API works as intended after encountering connection issues.
+
 #
-## 12. Test the API’s ability to handle edge cases, such as requests with missing or invalid parameters, and ensure that appropriate error messages are returned.
+## 12. Develop an automated test to handle edge cases, such as requests with missing or invalid parameters, and ensure that appropriate error messages are returned.
 
 - #### Steps:
 1. Send a GET request to: http://localhost:3000/api/workouts?type=Sleeping
@@ -215,18 +287,35 @@ The ID I wanted to updated / delete.
 - #### Result:
 - Status 404
 - No workouts of this type found.
+
+### Test Details
+**Location**   
+Fitness Tracker API > Automated tests > 12. Missing parameter   
+**Purpose**  
+This test ensures that the API correctly handles queries for nonexisting workout types.
+
+
 #
-## 13. Verify that the API correctly implements rate limiting or throttling mechanisms to prevent abuse or excessive use of resources.
+#
+## 13. Write an automated test to verify that the API correctly implements any rate limiting or throttling mechanisms to prevent abuse or excessive use of resources.
 
 - #### Steps:
 ```
-ran 52 Iterations of two get requests while our limit is at 100.
+ran 152 iterations of two GET requests because the limit is at 300.
+
 ```
 1. Send a GET request to: http://localhost:3000/API/users
 2. Send a GET request to: http://localhost:3000/API/workouts
 - #### Expected:
--  Status 429 Too Many Requests after 100 requests.
+- Status 200 OK for the first 300 requests.
+- Status 429 Too Many Requests after 300 requests.
 - #### Result:
 -  Status 429 Too Many Requests for the last four requests.
-  
+
+### Test Details
+**Location**   
+Fitness Tracker API > Automated tests > 13. Rate limiting  
+**Purpose**  
+This test ensures that the API rate limiting functions as intended.
 #
+
