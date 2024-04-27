@@ -1,8 +1,6 @@
 ## MANUAL TESTING
 #### This is a collection of the 13 manual tests for this project.
 #
-**TO BE UPDATED**
-#
 ## 1.  Status Code 200 Verify that the API returns the correct HTTP status code (e.g., 200 OK) for a successful GET request.
 - #### Steps:
 1. Send a GET request to: http://localhost:3000/API/users
@@ -11,8 +9,13 @@
 - Status: 200 OK 
 - #### Result:
 - Status: 200 OK
-#
 
+### Test Details
+**Location**   
+ Fitness Tracker API > Manual tests >  01. Status 200  
+**Purpose**  
+To test if the API is functional and returns the correct status code.
+#
 ## 2. Check if the API returns the expected data format (e.g., JSON, XML) in the response.
 - #### Steps:
 1. Send a GET request to: http://localhost:3000/API/users
@@ -32,6 +35,11 @@ example users:
     }
 ]
 ```
+### Test Details
+**Location**   
+ Fitness Tracker API > Manual tests >  02. Expected data  
+**Purpose**  
+To test if the API returns the correct JSON-format.
 #
 # 3. Ensure that the API returns the correct HTTP status code (e.g., 400 Bad Request) for an invalid request.
 - #### Steps:
@@ -42,7 +50,11 @@ example users:
 - #### Result: 
  - Status 404 Not Found
 
-
+ ### Test Details
+**Location**   
+ Fitness Tracker API > Manual tests > 03. Bad request   
+**Purpose**  
+To test how the API handles a bad request.
 #
 ## 4. Test if the API returns the correct data when querying with specific filters or search criteria.
 - #### Steps:
@@ -51,6 +63,12 @@ example users:
 - To return only workouts with the workout type "Hiking"
 - #### Result:
  - Returned workouts with the type "Hiking"
+
+ ### Test Details
+**Location**   
+ Fitness Tracker API > Manual tests >  04. Specific query  
+**Purpose**  
+To test how the API handles a request with specific query parameters.
 #
 ## 5. Verify that the API returns paginated results when a large number of records are requested.
 
@@ -60,7 +78,7 @@ example users:
  - To start on page 2 and return 10 workouts.
 - #### Result:
  - Returned the expected workouts
-``` 
+```
 Example: 
 {[{...}]
     "totalDocs": 21,
@@ -74,6 +92,12 @@ Example:
     "nextPage": 3
 }
 ```
+
+### Test Details
+**Location**   
+ Fitness Tracker API > Manual tests >  05. Paginate & limit  
+**Purpose**  
+To test how the API handles pagination and the returned data.
 #
 ## 6. Check if the API handles special characters and non-English text correctly in input data and returned responses.
 
@@ -95,6 +119,12 @@ Example:
     }
 ]
 ```
+
+### Test Details
+**Location**   
+ Fitness Tracker API > Manual tests >  06. Special characters  
+**Purpose**    
+To test how the API handles a request with special characters.
 #
 ## 7. Test the API’s response when sending concurrent requests to ensure that it can handle multiple users and maintain data consistency.
 
@@ -125,6 +155,12 @@ Example:
 ```
 Got the expected results with a total running duration of 2s and 988ms.
 ```
+
+### Test Details
+**Location**   
+ Fitness Tracker API > Manual tests >  07. Multiple requests  
+**Purpose**  
+To test how the API handles multiple requests and if we get the correct status codes.
 #
 ## 8. Test if the API correctly handles different HTTP methods (GET, POST, PUT, DELETE) for each endpoint and returns appropriate status codes and responses for each method.
 
@@ -148,6 +184,11 @@ The ID I wanted to updated / delete.
 - Status 200 OK Body also shows the update we did due to having { new: true } in our PUT route.
 - Status 200 with a message in body that says "Workout has been removed!".
 
+### Test Details
+**Location**   
+ Fitness Tracker API > Manual tests >  08. Different HTTP methods  
+**Purpose**  
+To test if the API returns the correct status codes.
 #
 ## 9. Check if the API correctly handles updates to existing records, ensuring that changes are saved and reflected in subsequent requests.
  
@@ -163,6 +204,12 @@ The ID I wanted to updated / delete.
 - 200 OK shows us the workout we wanted.
 - 200 OK updated the workout and even shows the updated workout in body.
 - 200 OK just to confirm that it's correctly updated which it is.
+
+### Test Details
+**Location**   
+ Fitness Tracker API > Manual tests >  09. Update correctly  
+**Purpose**  
+To test how the API handles updates.
 #
 ## 10. Test the API’s performance under heavy load, simulating a large number of users making requests simultaneously.
 
@@ -179,6 +226,12 @@ The ID I wanted to updated / delete.
 - The requests to takes some time to finish.
 - #### Result:
 - Got the expected results after a total running duration of 20s and 718ms.
+
+### Test Details
+**Location**   
+ Fitness Tracker API > Manual tests >  10. Simultaneous requests  
+**Purpose**  
+To test how the API handles many simultaneous requests.
 #
 ## 11. Verify that the API can recover gracefully from failures, such as database connection issues without compromising data integrity.
 
@@ -198,6 +251,11 @@ The ID I wanted to updated / delete.
 - Database connection back online.
 - Database working as intended showing all users.
 
+### Test Details
+**Location**   
+ Fitness Tracker API > Manual tests >  11. Connection  
+**Purpose**  
+To test how the database handles disconnect and reconnect.
 #
 ## 12. Test the API’s ability to handle edge cases, such as requests with missing or invalid parameters, and ensure that appropriate error messages are returned.
 
@@ -210,18 +268,30 @@ The ID I wanted to updated / delete.
 - #### Result:
 - Status 404
 - No workouts of this type found.
+
+### Test Details
+**Location**   
+ Fitness Tracker API > Manual tests >  12. Missing parameter  
+**Purpose**   
+To test if we get a response with the message "No workouts of this type found.".
+
 #
 ## 13. Verify that the API correctly implements rate limiting or throttling mechanisms to prevent abuse or excessive use of resources.
 
 - #### Steps:
 ```
-ran 52 Iterations of two get requests while our limit is at 100.
+ran 152 Iterations of two GET requests while our limit is at 300.
 ```
 1. Send a GET request to: http://localhost:3000/API/users
 2. Send a GET request to: http://localhost:3000/API/workouts
 - #### Expected:
--  Status 429 Too Many Requests after 100 requests.
+-  Status 429 Too Many Requests after 300 requests.
 - #### Result:
 -  Status 429 Too Many Requests for the last four requests.
-  
+
+### Test Details
+**Location**   
+ Fitness Tracker API > Manual tests >  13. Rate limit  
+**Purpose**  
+To test if we can reach the rate limit and get status 429 Too Many Requests.
 #
