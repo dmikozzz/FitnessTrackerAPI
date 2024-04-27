@@ -259,4 +259,134 @@
   "distance": 5,
   "caloriesBurned": 450,
   "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662d4f985b62cb359fe97abb"
+  },
+  "userId": {
+    "$oid": "6626a2fe768c4484dae0a3df"
+  },
+  "workout": "Outdoor Walk",
+  "steps": 7000,
+  "distance": 6.5,
+  "caloriesBurned": 550,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662d51155b62cb359fe97ac0"
+  },
+  "userId": {
+    "$oid": "6621d4c08eba0d0cadb45b2f"
+  },
+  "workout": "Outdoor Run",
+  "steps": 5000,
+  "distance": 5,
+  "caloriesBurned": 450,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662d56315b62cb359fe97ac8"
+  },
+  "userId": {
+    "$oid": "6621d4c08eba0d0cadb45b2f"
+  },
+  "workout": "Outdoor Run",
+  "steps": 5000,
+  "distance": 5,
+  "caloriesBurned": 450,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662d569c5b62cb359fe97acd"
+  },
+  "userId": {
+    "$oid": "6621d4c08eba0d0cadb45b2f"
+  },
+  "workout": "Outdoor Run",
+  "steps": 5000,
+  "distance": 5,
+  "caloriesBurned": 450,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662d56e05b62cb359fe97ad2"
+  },
+  "userId": {
+    "$oid": "6621d4c08eba0d0cadb45b2f"
+  },
+  "workout": "Outdoor Run",
+  "steps": 5000,
+  "distance": 5,
+  "caloriesBurned": 450,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662d57ee5b62cb359fe97ad5"
+  },
+  "userId": {
+    "$oid": "6621d4c08eba0d0cadb45b2f"
+  },
+  "workout": "Outdoor Run",
+  "steps": 5000,
+  "distance": 5,
+  "caloriesBurned": 450,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662d58505b62cb359fe97adf"
+  },
+  "userId": {
+    "$oid": "6621d4c08eba0d0cadb45b2f"
+  },
+  "workout": "Outdoor Run",
+  "steps": 5000,
+  "distance": 5,
+  "caloriesBurned": 450,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662d58fe5b62cb359fe97ae7"
+  },
+  "userId": {
+    "$oid": "6621d4c08eba0d0cadb45b2f"
+  },
+  "workout": "Outdoor Run",
+  "steps": 5500,
+  "distance": 6,
+  "caloriesBurned": 550,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662d59685b62cb359fe97aee"
+  },
+  "userId": {
+    "$oid": "6621d4c08eba0d0cadb45b2f"
+  },
+  "workout": "Outdoor Run",
+  "steps": 5500,
+  "distance": 6,
+  "caloriesBurned": 550,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662d59715b62cb359fe97af2"
+  },
+  "userId": {
+    "$oid": "6621d4c08eba0d0cadb45b2f"
+  },
+  "workout": "Outdoor Run",
+  "steps": 5500,
+  "distance": 6,
+  "caloriesBurned": 550,
+  "__v": 0
 }]
