@@ -330,8 +330,8 @@ Response:
 
 #### Rate limit
 
-This project has a rate limit of 300 request every 15 minutes in the server.js
-if that's something you need to change you will find it in row 15 in the server.js file.
+This project has a rate limit of 300 request every 15 minutes in the server.js  
+if that's something you need to change you will find it on row 15 in the server.js file.
 
 What happens if you exceed 300 requests is that simply the API will respond with a message that says
 >Too many requests from this IP, please try again in a while.
@@ -341,16 +341,18 @@ If you decide to use your own MongoDB connection.
 
 I will provide the mock data needed for users and workout which you can import in MongoDB compass.  
 For example if you go to users and press ADD DATA  
-you can simply paste the provided JSON file after choosing insert document  
+you can paste the provided JSON file after choosing insert document,  
 or if you have downloaded the JSON file you can choose to import JSON or CSV file.  
 You can find the mock data in the mock_data folder.
 
-If you'd like to make your mock own data I would recommend [Mockaroo](https://www.mockaroo.com/) where you would  
-for  
+If you'd like to make your mock own data I would recommend [Mockaroo](https://www.mockaroo.com/) 
+
 **users** 
 
-Add two fields, one with name and a Type like Full Name  
- and dailyActiveCaloriesGoal with the type Number and a min max of your preference  
+Add two fields.
+
+name and a Type like Full Name  
+dailyActiveCaloriesGoal with the type Number and a min max of your preference  
  for the goals to be.
 
 **workouts**  
@@ -358,7 +360,7 @@ Add two fields, one with name and a Type like Full Name
 You would add four fields.  
 
 workout with the Type Custom List  
-and in options you provide what workouts there is to randomize between.  
+in options you provide what workouts to randomize between.  
 Example: Walking, Running, Swimming, Cycling and so on.
 
 steps with the Type Number and min max of your preference.  
