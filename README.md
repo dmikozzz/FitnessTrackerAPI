@@ -53,7 +53,7 @@ can be found in the [Testing](https://github.com/dmikozzz/FitnessTrackerAPI/tree
 
  #### GET
  We can do a simple GET request to get all users.
- >Example: GET http://localhost:3000/API/users
+ >Example: GET `http://localhost:3000/API/users`
  ``` 
  [
     {
@@ -70,7 +70,7 @@ can be found in the [Testing](https://github.com/dmikozzz/FitnessTrackerAPI/tree
  ```
 
 We can also do a GET for a specific user with their user id.
->Example: GET http://localhost:3000/API/users/6621d4c08eba0d0cadb45b2f
+>Example: GET `http://localhost:3000/API/users/6621d4c08eba0d0cadb45b2f`
 ```
 {
     "_id": "6621d4c08eba0d0cadb45b2f",
@@ -81,7 +81,7 @@ We can also do a GET for a specific user with their user id.
 ```
 
 We can even do a search for a name in our GET request.
->Example: GET http://localhost:3000/api/users?name=Björn%20Jönsson keep in mind to search for an exact match otherwise the API will return an empty array.
+>Example: GET `http://localhost:3000/api/users?name=Björn Jönsson` keep in mind to search for an exact match otherwise the API will return an empty array.
 ```
 [
     {
@@ -95,7 +95,7 @@ We can even do a search for a name in our GET request.
 
  #### POST
  We can post users but keep in mind to include name and goal otherwise we will get an error.
- >Example: POST http://localhost:3000/API/users/
+ >Example: POST `http://localhost:3000/API/users/`
  ```
  Example body to include:
   {
@@ -112,7 +112,7 @@ We can even do a search for a name in our GET request.
  it's up to you if you want a first name and last name or just a nickname.
  #### PUT
  We can update our users and to do that we need to provide the id we want to update.
- >Example: PUT http://localhost:3000/API/users/661e8b4deab5230c94b3080d
+ >Example: PUT `http://localhost:3000/API/users/661e8b4deab5230c94b3080d`
 
  ```
  Body example for that user: 
@@ -126,7 +126,7 @@ We can even do a search for a name in our GET request.
 
  #### DELETE
  We can also delete an user if thats's wanted, don't forget to include the user ID you want to delete.
- > Example: DELETE http://localhost:3000/API/users/662ae2612001a3f0463bd1d4
+ > Example: DELETE `http://localhost:3000/API/users/662ae2612001a3f0463bd1d4`
  
 ```
 And we will get a response in body with:
@@ -138,19 +138,19 @@ And we will get a response in body with:
 
 #### CONNECTION
 In our users API we have a function where we are connected to the database always unless we request a disconnect. 
-> GET http://localhost:3000/api/users?disconnect=true
+> GET `http://localhost:3000/api/users?disconnect=true`
 
 This would lead to not being able to retrieve the users from the API.
 By doing any other request the database will automatically reconnect.
 
-> GET http://localhost:3000/api/users?disconnect=false will also work to turn the database connection back online.
+> GET `http://localhost:3000/api/users?disconnect=false` will also work to turn the database connection back online.
 #
 ## Workout
  The workouts API and its functions.
 
 #### GET
 We can do a simple GET for workouts.
->Example: GET http://localhost:3000/API/workouts
+>Example: GET `http://localhost:3000/API/workouts`
 ```
 Response:  
  {
@@ -180,7 +180,7 @@ Workouts will default to page 1 and a limit of 10 unless we provide page or limi
 
 It's also possible to do a GET for a specific workout id,
 
->Example: GET http://localhost:3000/API/workouts/6621b9a77ccb9ffd050ccaab
+>Example: GET `http://localhost:3000/API/workouts/6621b9a77ccb9ffd050ccaab`
 ```
 Response:
 {
@@ -195,7 +195,7 @@ Response:
 
 
 If we want to get let's say page 3 and a limit of 1 workout or request would look like
->Example: GET http://localhost:3000/api/workouts?page=3&limit=1
+>Example: GET `http://localhost:3000/api/workouts?page=3&limit=1`
 ```
 Response:
 {
@@ -229,7 +229,7 @@ The paginate updates the total pages according to our requested parameters with 
 ```
 
 The API can handle if we want to search for a specific workout. Keep in mind that it can only handle an exact match and existing workout.
->Example: GET http://localhost:3000/api/workouts?type=Outdoor%20Cycle
+>Example: GET `http://localhost:3000/api/workouts?type=Outdoor Cycle`
 
 The API would respond with workouts that have the workout type Outdoor Cycle.  
 ```
@@ -252,7 +252,7 @@ Response:
         }
 ```
 If we search for an workout that doesn't exist or we don't have an exact match we will get an message and a status of 404 Not Found.
-> Example: GET http://localhost:3000/api/workouts?type=Sleeping
+> Example: GET `http://localhost:3000/api/workouts?type=Sleeping`
 
 ```
 Response:
@@ -273,7 +273,7 @@ Response:
   "caloriesBurned": 450
 }
  ```
- >Example: POST http://localhost:3000/API/workouts/
+ >Example: POST `http://localhost:3000/API/workouts/`
    ```
    The body as raw JSON
    {
@@ -290,7 +290,7 @@ It's not required to provide all these details but that would be a boring workou
 
 #### PUT 
 We can also update our workout but we need to provide the id we want to update.
->Example: PUT http://localhost:3000/API/workouts/662c2feb990b891e8609dd9f
+>Example: PUT `http://localhost:3000/API/workouts/662c2feb990b891e8609dd9f`
 
 ```
 We follow the already existing structure and update our caloriesBurned to 550.
@@ -318,7 +318,7 @@ Response:
 
 #### DELETE
 It is possible to delete a workout if we include the id.
-> Example: DELETE http://localhost:3000/API/workouts/662c2feb990b891e8609dd9f
+> Example: DELETE `http://localhost:3000/API/workouts/662c2feb990b891e8609dd9f`
 ```
 Response: 
 {

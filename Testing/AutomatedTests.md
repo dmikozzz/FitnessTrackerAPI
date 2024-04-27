@@ -3,8 +3,8 @@
 #
 ## 1.  Status Code 200 Verify that the API returns the correct HTTP status code (e.g., 200 OK) for a successful GET request.
 - #### Steps:
-1. Send a GET request to: http://localhost:3000/API/users
-2. Send a GET request to: http://localhost:3000/API/workouts 
+1. Send a GET request to: `http://localhost:3000/API/users` 
+2. Send a GET request to: `http://localhost:3000/API/workouts`
 ``` 
 pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
@@ -24,8 +24,8 @@ This test confirms that the API endpoints are operational and accessible.
 #
 ## 2. Verify that the API returns the expected data format (e.g., JSON, XML) in the response.
 - #### Steps:
-1. Send a GET request to: http://localhost:3000/API/users
-2. Send a GET request to: http://localhost:3000/API/workouts
+1. Send a GET request to: `http://localhost:3000/API/users`
+2. Send a GET request to: `http://localhost:3000/API/workouts`
 - #### Expected:
 - Body to contain JSON-format
 - #### Result:
@@ -49,7 +49,7 @@ This test ensures that the API returns data in a JSON format.
 #
 # 3. Ensure that the API returns the correct HTTP status code (e.g., 400 Bad Request) for an invalid requests.
 - #### Steps:
-- Send a GET request to: http://localhost:3000/API/kyh
+- Send a GET request to: `http://localhost:3000/API/kyh`
 
 - #### Expected:
  - Status: 404 Not Found 
@@ -65,7 +65,7 @@ This test ensures that the API responds to invalid endpoints with Status 404 Not
 #
 ## 4. Create an automated test that sends a request with specific filters or search criteria and checks if the API returns the correct data.
 - #### Steps:
- - Send a GET request to: http://localhost:3000/api/workouts?type=Hiking
+ - Send a GET request to: `http://localhost:3000/api/workouts?type=Hiking`
 - #### Expected:
 - To return only workouts with the workout type "Hiking"
 - #### Result:
@@ -82,7 +82,7 @@ ensures it returns the requested workouts.
 ## 5. Write an automated test to verify that the API returns paginated results when a large number of records are requested
 
 - #### Steps:
-  Send a GET request to: http://localhost:3000/api/workouts?page=2&limit=10
+  Send a GET request to: `http://localhost:3000/api/workouts?page=2&limit=10`
 - #### Expected:
  - To start on page 2 and return 10 workouts.
 - #### Result:
@@ -111,7 +111,7 @@ This test ensures that the API implements pagination and returns specified data.
 ## 6. Test if the API handles special characters and non-English text correctly in input data and returned responses using an automated testing tool.
 
 - #### Steps:
-- Send a GET request to: http://localhost:3000/api/users?name=Björn%20Jönsson
+- Send a GET request to: `http://localhost:3000/api/users?name=Björn Jönsson`
 
 - #### Expected:
 - To return the requested user
@@ -141,12 +141,12 @@ This test ensures that the API can process and respond to a request containing s
 ```
  The following GET and POST request with 5 iterations and 0 ms delay.
 ```
-1. Send a GET request to: http://localhost:3000/API/users
-2. Send a GET request to: http://localhost:3000/API/workouts
-3. Send a GET request to: http://localhost:3000/API/kyh
-4. Send a GET request to: http://localhost:3000/api/workouts?type=Hiking
-5. Send a POST request to: http://localhost:3000/API/workouts/
-6. Send a POST request to: http://localhost:3000/API/users
+1. Send a GET request to: `http://localhost:3000/API/users`
+2. Send a GET request to: `http://localhost:3000/API/workouts`
+3. Send a GET request to: `http://localhost:3000/API/kyh`
+4. Send a GET request to: `http://localhost:3000/api/workouts?type=Hiking`
+5. Send a POST request to: `http://localhost:3000/API/workouts/`
+6. Send a POST request to: `http://localhost:3000/API/users`
 - #### Expected:
 1. Status 200 OK
 2. Status 200 OK
@@ -178,10 +178,10 @@ because there is a rate limit of 300.
 ## 8. Create an automated test and test if the API correctly handles different HTTP methods (GET, POST, PUT, DELETE) for each endpoint and returns appropriate status codes and responses for each method.
 
 - #### Steps:
-1. Send a GET request to: http://localhost:3000/API/users/
-2. Send a POST request to: http://localhost:3000/API/workouts/
-3. Send a PUT request to: http://localhost:3000/API/workouts/66291e20c13e4c39a807938a
-4. Send a DELETE request to: http://localhost:3000/API/workouts/66291e20c13e4c39a807938a
+1. Send a GET request to: `http://localhost:3000/API/users/`
+2. Send a POST request to: `http://localhost:3000/API/workouts/`
+3. Send a PUT request to: `http://localhost:3000/API/workouts/66291e20c13e4c39a807938a`
+4. Send a DELETE request to: `http://localhost:3000/API/workouts/66291e20c13e4c39a807938a`
 ```
 example: Workout ID: 66291e20c13e4c39a807938a
 The ID I wanted to updated / delete.
@@ -205,9 +205,9 @@ This test ensures the correct status codes and messages for various HTTP methods
 ## 9. Write an automated test to check if the API correctly handles updates to existing records, ensuring that changes are saved and reflected in subsequent requests.
  
 - #### Steps:
-1. Send a GET request for specific workout: http://localhost:3000/API/workouts/66292046c13e4c39a807939a
-2. Send a PUT request for that workout: http://localhost:3000/API/workouts/66292046c13e4c39a807939a
-3. Send a new GET request to check update. http://localhost:3000/API/workouts/66292046c13e4c39a807939a
+1. Send a GET request for specific workout: `http://localhost:3000/API/workouts/66292046c13e4c39a807939a`
+2. Send a PUT request for that workout: `http://localhost:3000/API/workouts/66292046c13e4c39a807939a`
+3. Send a new GET request to check update. `http://localhost:3000/API/workouts/66292046c13e4c39a807939a`
 - #### Expected:
 - Status 200 OK
 - Status 200 OK
@@ -229,11 +229,11 @@ This test verifies that the API accurately updates and correctly applies the cha
 ```
 5 different GET request with 50 iterations.
 ```
-1. Send a GET request to: http://localhost:3000/API/users
-2. Send a GET request to: http://localhost:3000/API/workouts
-3. Send a GET request to: http://localhost:3000/API/users/661e8b4deab5230c94b30812
-4. Send a GET request to: http://localhost:3000/API/workouts/6621b9a77ccb9ffd050ccaab
-5. Send a GET request to: http://localhost:3000/api/workouts?type=Outdoor%20Cycle
+1. Send a GET request to: `http://localhost:3000/API/users`
+2. Send a GET request to: `http://localhost:3000/API/workouts`
+3. Send a GET request to: `http://localhost:3000/API/users/661e8b4deab5230c94b30812`
+4. Send a GET request to: `http://localhost:3000/API/workouts/6621b9a77ccb9ffd050ccaab`
+5. Send a GET request to: `http://localhost:3000/api/workouts?type=Outdoor%20Cycle`
 - #### Expected:
 - The requests to takes some time to finish.
 - #### Result:
@@ -254,8 +254,8 @@ But for the sake of it running a performance test with 20 users for a minute wou
 ## 11. Create an automated test that verifies the API can recover gracefully from failures, such as database connection issues or third-party service outages, without compromising data integrity.
 
 - #### Steps:
-1. Send a GET request to: http://localhost:3000/api/users?disconnect=true 
-2. Send a GET request to: http://localhost:3000/api/users?disconnect=false
+1. Send a GET request to: `http://localhost:3000/api/users?disconnect=true` 
+2. Send a GET request to: `http://localhost:3000/api/users?disconnect=false`
 - #### Expected:
 - Status 500 Internal Server Error
 - Database connection offline.
@@ -279,7 +279,7 @@ This test ensures that the API works as intended after encountering connection i
 ## 12. Develop an automated test to handle edge cases, such as requests with missing or invalid parameters, and ensure that appropriate error messages are returned.
 
 - #### Steps:
-1. Send a GET request to: http://localhost:3000/api/workouts?type=Sleeping
+1. Send a GET request to: `http://localhost:3000/api/workouts?type=Sleeping`
 
 - #### Expected:
 - Status 404
@@ -304,8 +304,8 @@ This test ensures that the API correctly handles queries for nonexisting workout
 ran 152 iterations of two GET requests because the limit is at 300.
 
 ```
-1. Send a GET request to: http://localhost:3000/API/users
-2. Send a GET request to: http://localhost:3000/API/workouts
+1. Send a GET request to: `http://localhost:3000/API/users`
+2. Send a GET request to: `http://localhost:3000/API/workouts`
 - #### Expected:
 - Status 200 OK for the first 300 requests.
 - Status 429 Too Many Requests after 300 requests.
