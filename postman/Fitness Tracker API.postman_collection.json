@@ -1,0 +1,2421 @@
+{
+	"info": {
+		"_postman_id": "12b4de16-0487-4e8e-b7a9-ca13a18f6ecb",
+		"name": "Fitness Tracker API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33841452",
+		"_collection_link": "https://www.postman.com/gold-firefly-601719/workspace/fitness-tracker-api/collection/33841452-12b4de16-0487-4e8e-b7a9-ca13a18f6ecb?action=share&source=collection_link&creator=33841452"
+	},
+	"item": [
+		{
+			"name": "Manual tests",
+			"item": [
+				{
+					"name": "01. Status 200",
+					"item": [
+						{
+							"name": "Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workouts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/workouts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "02. Expected data",
+					"item": [
+						{
+							"name": "Expected data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "03. Bad request",
+					"item": [
+						{
+							"name": "Bad Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/kyh",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"kyh"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "04. Specific query",
+					"item": [
+						{
+							"name": "Specific query",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/workouts?type=Hiking",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"workouts"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "Hiking"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "05. Paginate & limit",
+					"item": [
+						{
+							"name": "Paginate & limit",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/workouts?page=2&limit=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"workouts"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "06. Special characters",
+					"item": [
+						{
+							"name": "Special characters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/users?name=Björn%20Jönsson",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Björn%20Jönsson"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "07. Multiple requests",
+					"item": [
+						{
+							"name": "Workouts Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/workouts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Users Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Bad Request Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/kyh",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"kyh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Specific query Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/workouts?type=Hiking",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"workouts"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "Hiking"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": \"6626a2fe768c4484dae0a3df\",\r\n  \"workout\": \"Outdoor Walk\",\r\n  \"steps\": 7000,\r\n  \"distance\": 6.5,\r\n  \"caloriesBurned\": 550\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Michael Hayburn\",\r\n  \"dailyActiveCaloriesGoal\": 1100\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/API/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "08. Different HTTP methods",
+					"item": [
+						{
+							"name": "Users",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/API/users/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workout",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": \"6621d4c08eba0d0cadb45b2f\",\r\n  \"workout\": \"Outdoor Run\",\r\n  \"steps\": 5000,\r\n  \"distance\": 5,\r\n  \"caloriesBurned\": 450\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workout",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n            \"_id\": \"662920bfc13e4c39a80793a5\",\r\n            \"userId\": \"6621d4c08eba0d0cadb45b2f\",\r\n            \"workout\": \"Outdoor Run\",\r\n            \"steps\": 5500,\r\n            \"distance\": 5.5,\r\n            \"caloriesBurned\": 600,\r\n            \"__v\": 0\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/662920bfc13e4c39a80793a5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										"662920bfc13e4c39a80793a5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workout",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/662920bfc13e4c39a80793a5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										"662920bfc13e4c39a80793a5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "09. Update correctly",
+					"item": [
+						{
+							"name": "Specific Workout",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/66292046c13e4c39a807939a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										"66292046c13e4c39a807939a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workout",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n            \"_id\": \"662920bfc13e4c39a80793a5\",\r\n            \"userId\": \"6621d4c08eba0d0cadb45b2f\",\r\n            \"workout\": \"Outdoor Run\",\r\n            \"steps\": 5500,\r\n            \"distance\": 5.5,\r\n            \"caloriesBurned\": 600,\r\n            \"__v\": 0\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/66292046c13e4c39a807939a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										"66292046c13e4c39a807939a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Specific Workout",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/66292046c13e4c39a807939a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										"66292046c13e4c39a807939a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "10. Simultaneous requests",
+					"item": [
+						{
+							"name": "Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workouts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/workouts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Specific User Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/users/661e8b4deab5230c94b30812",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users",
+										"661e8b4deab5230c94b30812"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Specific Workout Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/6621b9a77ccb9ffd050ccaab",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										"6621b9a77ccb9ffd050ccaab"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "workouttype Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/workouts?type=Outdoor Cycle",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"workouts"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "Outdoor Cycle"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "11. Connection",
+					"item": [
+						{
+							"name": "DC true",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/users?disconnect=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "disconnect",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DC false",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/users?disconnect=false",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "disconnect",
+											"value": "false"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "12. Missing parameter",
+					"item": [
+						{
+							"name": "Specific query",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/workouts?type=Sleeping",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"workouts"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "Sleeping"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "13. Rate limit",
+					"item": [
+						{
+							"name": "Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workouts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/workouts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Automated tests",
+			"item": [
+				{
+					"name": "01. Status 200",
+					"item": [
+						{
+							"name": "Users",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workouts",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/workouts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "02. Expected data",
+					"item": [
+						{
+							"name": "Expected data",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response should be in JSON format\", function() {\r",
+											"    pm.response.to.have.jsonBody();\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "03. Bad request",
+					"item": [
+						{
+							"name": "Bad Request",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/kyh",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"kyh"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "04. Specific query",
+					"item": [
+						{
+							"name": "Specific query",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Workouts should be of type 'Hiking'\", function() {\r",
+											"    const workouts = pm.response.json().docs;\r",
+											"    workouts.forEach((workout) => {\r",
+											"        pm.expect(workout.workout).to.eql(\"Hiking\");\r",
+											"    });\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/workouts?type=Hiking",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"workouts"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "Hiking"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "05. Paginate & limit",
+					"item": [
+						{
+							"name": "Paginate & limit",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Pagination data & limit is correct\", function() {\r",
+											"    const response = pm.response.json();\r",
+											"     pm.expect(response.limit).to.eql(10);\r",
+											"     pm.expect(response.page).to.eql(2);\r",
+											"     pm.expect(response.docs.length).to.eql(10);\r",
+											"     pm.expect(response.pagingCounter).to.eql(11);\r",
+											" });\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/workouts?page=2&limit=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"workouts"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "06. Special characters",
+					"item": [
+						{
+							"name": "Special characters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Correct user is returned with special characters\", function() {\r",
+											"    const users = pm.response.json();\r",
+											"     pm.expect(users[0].name).to.eql(\"Björn Jönsson\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/users?name=Björn%20Jönsson",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Björn%20Jönsson"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									"pm.test(\"Correct user is returned with special characters\", function() {\r",
+									"    const users = pm.response.json();\r",
+									"     pm.expect(users[0].name).to.eql(\"Björn Jönsson\");\r",
+									"});"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "07. Multiple requests",
+					"item": [
+						{
+							"name": "Workouts Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function() {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/workouts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Users Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function() {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Bad Request Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function() {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/kyh",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"kyh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Specific query Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function() {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/workouts?type=Hiking",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"workouts"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "Hiking"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function() {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": \"6626a2fe768c4484dae0a3df\",\r\n  \"workout\": \"Outdoor Walk\",\r\n  \"steps\": 7000,\r\n  \"distance\": 6.5,\r\n  \"caloriesBurned\": 550\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function() {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Michael Hayburn\",\r\n  \"dailyActiveCaloriesGoal\": 1100\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/API/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "08. Different HTTP methods",
+					"item": [
+						{
+							"name": "Users",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function() {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/API/users/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201 Created\", function() {\r",
+											"    pm.response.to.have.status(201);\r",
+											"    const responseBody = pm.response.json();\r",
+											"    pm.expect(responseBody).to.have.property('workout');\r",
+											"    pm.expect(responseBody).to.have.property('userId');\r",
+											"    pm.globals.set(\"workoutId\", responseBody._id); \r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": \"6621d4c08eba0d0cadb45b2f\",\r\n  \"workout\": \"Outdoor Run\",\r\n  \"steps\": 5000,\r\n  \"distance\": 5,\r\n  \"caloriesBurned\": 450\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200 and workout updated\", function() {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    const responseBody = pm.response.json();\r",
+											"    pm.expect(responseBody).to.have.property('workout');\r",
+											"    pm.expect(responseBody.workout).to.eql('Outdoor Run');\r",
+											"    pm.expect(responseBody.steps).to.not.eql(5000);\r",
+											"    pm.expect(responseBody.distance).to.not.eql(5);\r",
+											"    pm.expect(responseBody.caloriesBurned).to.not.eql(450);\r",
+											"\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const workoutId = pm.globals.get(\"workoutId\"); \r",
+											"pm.request.url = `http://localhost:3000/API/workouts/${workoutId}`;\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n            \"_id\": \"662920bfc13e4c39a80793a5\",\r\n            \"userId\": \"6621d4c08eba0d0cadb45b2f\",\r\n            \"workout\": \"Outdoor Run\",\r\n            \"steps\": 5500,\r\n            \"distance\": 5.5,\r\n            \"caloriesBurned\": 600,\r\n            \"__v\": 0\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/662920bfc13e4c39a80793a5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										"662920bfc13e4c39a80793a5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200 and workout removed message\", function() {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    const responseBody = pm.response.json();\r",
+											"    pm.expect(responseBody.message).to.eql(\"Workout has been removed!\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const workoutId = pm.globals.get(\"workoutId\"); \r",
+											"pm.request.url = `http://localhost:3000/API/workouts/${workoutId}`;"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/662920bfc13e4c39a80793a5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										"662920bfc13e4c39a80793a5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "09. Update correctly",
+					"item": [
+						{
+							"name": "Specific Workout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/66292046c13e4c39a807939a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										"66292046c13e4c39a807939a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"\r",
+											"pm.test(\"Status 200 with correct data\", function() {\r",
+											"    pm.response.to.have.status(200);  \r",
+											"\r",
+											"    const workout = pm.response.json();\r",
+											"    \r",
+											"    pm.expect(workout.steps).to.eql(5500);\r",
+											"    pm.expect(workout.distance).to.eql(5.5);\r",
+											"    pm.expect(workout.caloriesBurned).to.eql(600);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n            \"_id\": \"662920bfc13e4c39a80793a5\",\r\n            \"userId\": \"6621d4c08eba0d0cadb45b2f\",\r\n            \"workout\": \"Outdoor Run\",\r\n            \"steps\": 5500,\r\n            \"distance\": 5.5,\r\n            \"caloriesBurned\": 600,\r\n            \"__v\": 0\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/66292046c13e4c39a807939a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										"66292046c13e4c39a807939a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Specific Workout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status 200 with correct data\", function() {\r",
+											"    pm.response.to.have.status(200);  \r",
+											"\r",
+											"    const workout = pm.response.json();\r",
+											"    \r",
+											"    pm.expect(workout.steps).to.eql(5500);\r",
+											"    pm.expect(workout.distance).to.eql(5.5);\r",
+											"    pm.expect(workout.caloriesBurned).to.eql(600);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/66292046c13e4c39a807939a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										"66292046c13e4c39a807939a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "10. Simultaneous requests",
+					"item": [
+						{
+							"name": "Users",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function() {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workouts",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function() {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/workouts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Specific User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function() {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/users/661e8b4deab5230c94b30812",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users",
+										"661e8b4deab5230c94b30812"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Specific Workout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function() {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/workouts/6621b9a77ccb9ffd050ccaab",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts",
+										"6621b9a77ccb9ffd050ccaab"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "workout type",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function() {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/workouts?type=Outdoor Cycle",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"workouts"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "Outdoor Cycle"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "11. Connection",
+					"item": [
+						{
+							"name": "DC true",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500 and error message\", function() {\r",
+											"    pm.response.to.have.status(500);\r",
+											"    pm.expect(pm.response.text()).to.include(\"An error occurred on the server while retrieving the users.\"); \r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/users?disconnect=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "disconnect",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DC false",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function() {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"List of users\", function() {\r",
+											"    const response = pm.response.json();\r",
+											"    pm.expect(response).to.be.an('array');\r",
+											"    pm.expect(response.length).to.be.above(0);  \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/users?disconnect=false",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "disconnect",
+											"value": "false"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "12. Missing parameter",
+					"item": [
+						{
+							"name": "Specific query",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404 and error message\", function() {\r",
+											"    pm.response.to.have.status(404);\r",
+											"    pm.expect(pm.response.text()).to.include(\"No workouts of this type found.\"); \r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/workouts?type=Sleeping",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"workouts"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "Sleeping"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "13. Rate limiting",
+					"item": [
+						{
+							"name": "Users",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status 200 / 429\", function () {\r",
+											"    if (pm.info.iteration < 150) {\r",
+											"        pm.response.to.have.status(200);\r",
+											"    } else {\r",
+											"        pm.response.to.have.status(429);\r",
+											"    }\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Workouts",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status 200 / 429\", function () {\r",
+											"    if (pm.info.iteration < 150) {\r",
+											"        pm.response.to.have.status(200);\r",
+											"    } else {\r",
+											"        pm.response.to.have.status(429);\r",
+											"    }\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/API/workouts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"API",
+										"workouts"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									"\r",
+									""
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
