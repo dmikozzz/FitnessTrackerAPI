@@ -43,7 +43,7 @@ example users:
 ```
 ### Test Details
 **Location**   
- Fitness Tracker API > Automated tests >  02. Expected data
+ Fitness Tracker API > Automated tests >  02. Expected data  
 **Purpose**  
 This test ensures that the API returns data in a JSON format.
 #
@@ -168,7 +168,7 @@ Got the expected results with a total running duration of 2s and 988ms.
 **Location**   
  Fitness Tracker API > Automated tests >  07. Multiple requests  
 **Purpose**  
-To ensure that the API can handle concurrent request while maintaining data consistency under load.
+To ensure that the API can handle concurrent request while maintaining data consistency under load.  
 **Other information**  
 Did a functional test instead of a performance test due to it showing many errors,  
 because there is a rate limit of 300.  
