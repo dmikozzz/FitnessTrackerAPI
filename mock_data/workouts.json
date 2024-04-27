@@ -1,0 +1,262 @@
+[{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccaaa"
+  },
+  "userId": "661e8b4deab5230c94b3080d",
+  "workout": "Outdoor Walk",
+  "steps": 4000,
+  "distance": 3,
+  "caloriesBurned": 240
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccaab"
+  },
+  "userId": "661e8b4deab5230c94b3080d",
+  "workout": "Outdoor Run",
+  "steps": 5000,
+  "distance": 5,
+  "caloriesBurned": 450
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccaac"
+  },
+  "userId": "661e8b4deab5230c94b30812",
+  "workout": "Hiking",
+  "steps": 8000,
+  "distance": 6,
+  "caloriesBurned": 600
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccaad"
+  },
+  "userId": "661e8b4deab5230c94b30814",
+  "workout": "Outdoor Cycle",
+  "steps": 0,
+  "distance": 15,
+  "caloriesBurned": 350
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccaae"
+  },
+  "userId": "661e8b4deab5230c94b30817",
+  "workout": "Indoor Cycle",
+  "steps": 0,
+  "distance": 20,
+  "caloriesBurned": 500
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccaaf"
+  },
+  "userId": "661e8b4deab5230c94b3081a",
+  "workout": "Indoor Walk",
+  "steps": 2500,
+  "distance": 2,
+  "caloriesBurned": 150
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccab0"
+  },
+  "userId": "661e8b4deab5230c94b3081b",
+  "workout": "Indoor Run",
+  "steps": 6000,
+  "distance": 8,
+  "caloriesBurned": 700
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccab1"
+  },
+  "userId": "661e8b4deab5230c94b3081c",
+  "workout": "Pool Swim",
+  "steps": 0,
+  "distance": 0.7,
+  "caloriesBurned": 350
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccab2"
+  },
+  "userId": "661e8b4deab5230c94b30811",
+  "workout": "Open Water Swim",
+  "steps": 0,
+  "distance": 1,
+  "caloriesBurned": 350
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccab3"
+  },
+  "userId": "661e8b4deab5230c94b30813",
+  "workout": "Outdoor Walk",
+  "steps": 3000,
+  "distance": 2.2,
+  "caloriesBurned": 180
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccab4"
+  },
+  "userId": "661e8b4deab5230c94b3081f",
+  "workout": "Indoor Cycle",
+  "steps": 0,
+  "distance": 25,
+  "caloriesBurned": 450
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccab5"
+  },
+  "userId": "661e8b4deab5230c94b30820",
+  "workout": "Indoor Walk",
+  "steps": 3500,
+  "distance": 2.5,
+  "caloriesBurned": 200
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccab6"
+  },
+  "userId": "661e8b4deab5230c94b30810",
+  "workout": "Outdoor Walk",
+  "steps": 4500,
+  "distance": 3.5,
+  "caloriesBurned": 250
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccab7"
+  },
+  "userId": "661e8b4deab5230c94b30818",
+  "workout": "Outdoor Run",
+  "steps": 5500,
+  "distance": 6,
+  "caloriesBurned": 500
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccab8"
+  },
+  "userId": "661e8b4deab5230c94b30819",
+  "workout": "Outdoor Run",
+  "steps": 7000,
+  "distance": 7,
+  "caloriesBurned": 550
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccab9"
+  },
+  "userId": "661e8b4deab5230c94b3081e",
+  "workout": "Indoor Cycle",
+  "steps": 0,
+  "distance": 20,
+  "caloriesBurned": 500
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccaba"
+  },
+  "userId": "661e8b4deab5230c94b3080e",
+  "workout": "Outdoor Cycle",
+  "steps": 0,
+  "distance": 12,
+  "caloriesBurned": 300
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccabb"
+  },
+  "userId": "661e8b4deab5230c94b3080f",
+  "workout": "Pool Swim",
+  "steps": 0,
+  "distance": 0.5,
+  "caloriesBurned": 300
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccabc"
+  },
+  "userId": "661e8b4deab5230c94b30815",
+  "workout": "Indoor Run",
+  "steps": 6000,
+  "distance": 10,
+  "caloriesBurned": 800
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccabd"
+  },
+  "userId": "661e8b4deab5230c94b30816",
+  "workout": "Indoor Run",
+  "steps": 7000,
+  "distance": 10,
+  "caloriesBurned": 800
+},
+{
+  "_id": {
+    "$oid": "6621b9a77ccb9ffd050ccabe"
+  },
+  "userId": "661e8b4deab5230c94b30816",
+  "workout": "Outdoor Run",
+  "steps": 7000,
+  "distance": 10,
+  "caloriesBurned": 900
+},
+{
+  "_id": {
+    "$oid": "6627b31820ffb05d98657057"
+  },
+  "userId": {
+    "$oid": "6626a2fe768c4484dae0a3df"
+  },
+  "workout": "Outdoor Walk",
+  "steps": 7000,
+  "distance": 6.5,
+  "caloriesBurned": 550,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66292046c13e4c39a807939a"
+  },
+  "userId": {
+    "$oid": "6621d4c08eba0d0cadb45b2f"
+  },
+  "workout": "Outdoor Run",
+  "steps": 5500,
+  "distance": 5.5,
+  "caloriesBurned": 600,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662b5c6a4f650699589990c1"
+  },
+  "userId": {
+    "$oid": "6626a2fe768c4484dae0a3df"
+  },
+  "workout": "Outdoor Walk",
+  "steps": 7000,
+  "distance": 6.5,
+  "caloriesBurned": 550,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662b5c6a4f650699589990c6"
+  },
+  "userId": {
+    "$oid": "6621d4c08eba0d0cadb45b2f"
+  },
+  "workout": "Outdoor Run",
+  "steps": 5000,
+  "distance": 5,
+  "caloriesBurned": 450,
+  "__v": 0
+}]

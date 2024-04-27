@@ -1,0 +1,164 @@
+[{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b3080d"
+  },
+  "name": "Maria Silva",
+  "dailyActiveCaloriesGoal": 900
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b30812"
+  },
+  "name": "Chen Wei",
+  "dailyActiveCaloriesGoal": 1100
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b30814"
+  },
+  "name": "Mohammed Al-Fayed",
+  "dailyActiveCaloriesGoal": 1200
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b30817"
+  },
+  "name": "Isabel Martinez",
+  "dailyActiveCaloriesGoal": 900
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b3081a"
+  },
+  "name": "Dmitri Barkov",
+  "dailyActiveCaloriesGoal": 1500
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b3081b"
+  },
+  "name": "Laura Fischer",
+  "dailyActiveCaloriesGoal": 1100
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b3081c"
+  },
+  "name": "David Kim",
+  "dailyActiveCaloriesGoal": 1250
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b30811"
+  },
+  "name": "Yuki Tanaka",
+  "dailyActiveCaloriesGoal": 900
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b30813"
+  },
+  "name": "Elena Popova",
+  "dailyActiveCaloriesGoal": 1300
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b3081f"
+  },
+  "name": "Leila Farah",
+  "dailyActiveCaloriesGoal": 750
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b30820"
+  },
+  "name": "Kunal Nayyar",
+  "dailyActiveCaloriesGoal": 1100
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b30810"
+  },
+  "name": "Lucas Smith",
+  "dailyActiveCaloriesGoal": 1200
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b30818"
+  },
+  "name": "Noah Berger",
+  "dailyActiveCaloriesGoal": 1000
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b30819"
+  },
+  "name": "Aya Hashimoto",
+  "dailyActiveCaloriesGoal": 800
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b3081e"
+  },
+  "name": "Carlos Hernández",
+  "dailyActiveCaloriesGoal": 1300
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b3080e"
+  },
+  "name": "James Wilson",
+  "dailyActiveCaloriesGoal": 1300
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b3080f"
+  },
+  "name": "Anita Raj",
+  "dailyActiveCaloriesGoal": 1000
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b30815"
+  },
+  "name": "Sophia D’Souza",
+  "dailyActiveCaloriesGoal": 850
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b30816"
+  },
+  "name": "Omar Mubarak",
+  "dailyActiveCaloriesGoal": 1150
+},
+{
+  "_id": {
+    "$oid": "661e8b4deab5230c94b3081d"
+  },
+  "name": "Amira Elamin",
+  "dailyActiveCaloriesGoal": 950
+},
+{
+  "_id": {
+    "$oid": "6621d4c08eba0d0cadb45b2f"
+  },
+  "name": "Mikozzz",
+  "dailyActiveCaloriesGoal": 1200,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6626a2fe768c4484dae0a3df"
+  },
+  "name": "Björn Jönsson",
+  "dailyActiveCaloriesGoal": 1400,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6627b31820ffb05d98657059"
+  },
+  "name": "Michael Hayburn",
+  "dailyActiveCaloriesGoal": 1100,
+  "__v": 0
+}]

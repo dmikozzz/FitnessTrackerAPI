@@ -299,3 +299,34 @@ if that's something you need to change you will find it in row 15 in the server.
 
 What happens if you exceed 300 requests is that simply the API will respond with a message that says
 >Too many requests from this IP, please try again in a while.
+#
+#### Mock data
+If you decide to use your own MongoDB connection.  
+
+I will provide the mock data needed for users and workout which you can import in MongoDB compass.  
+For example if you go to users and press ADD DATA  
+you can simply paste the provided JSON file after choosing insert document  
+or if you have downloaded the JSON file you can choose to import JSON or CSV file.  
+You can find the mock data in the mock_data folder.
+
+If you'd like to make your mock own data I would recommend Mockaroo where you would  
+for 
+#### users
+Add two fields, one with name and a Type like Full Name  
+ and dailyActiveCaloriesGoal with the type Number and a min max of your preference  
+ for the goals to be.
+
+#### workouts
+You would add four fields.  
+
+workout with the Type Custom List  
+and in options you provide what workouts there is to randomize between.  
+Example: Walking, Running, Swimming, Cycling and so on.
+
+steps with the Type Number and min max of your preference.  
+distance with the Type Number and min max of your preference.  
+caloriesBurned with the Type Number and min max of your preference.
+
+And lastly you choose how many #Rows you want and Format: JSON
+
+ 
