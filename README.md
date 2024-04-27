@@ -18,25 +18,25 @@ My goal for this assignment is to get the grade **VG**.
 
 ##  Dependencies
 ```
->npm init -y   
+npm init -y   
 ```
-For creating a package.json file
+>For creating a package.json file
 ```
 npm i express mongoose
 ```
-To install express and mongoose
+>To install express and mongoose
 ```
 npm install mongoose-paginate-v2
 ```
-For our pagination
+>For our pagination
 ```
 npm i express-rate-limit  
 ```
-Needed for rate-limiting
+>Needed for rate-limiting
 ```
 npm install -g nodemon 
 ```
-Not required but recommended if you do changes often in the js  
+>Not required but recommended if you do changes often in the js  
 instead of having to terminate and start the server.js every time,  
 nodemon restarts it automatically for you. 
 #
@@ -346,7 +346,7 @@ you can simply paste the provided JSON file after choosing insert document
 or if you have downloaded the JSON file you can choose to import JSON or CSV file.  
 You can find the mock data in the mock_data folder.
 
-If you'd like to make your mock own data I would recommend Mockaroo where you would  
+If you'd like to make your mock own data I would recommend [Mockaroo](https://www.mockaroo.com/) where you would  
 for  
 **users** 
 
