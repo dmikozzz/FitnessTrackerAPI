@@ -42,9 +42,9 @@ nodemon restarts it automatically for you.
 #
 ## Postman
 
-**Test collection:**
+**Test collection:** [Fitness Tracker API Public](https://www.postman.com/gold-firefly-601719/workspace/fitness-tracker-api/collection/33841452-12b4de16-0487-4e8e-b7a9-ca13a18f6ecb?action=share&creator=33841452)
 
-**Mock server collection:**
+**Mock server collection:** [Mock Fitness Tracker API Public](https://www.postman.com/gold-firefly-601719/workspace/fitness-tracker-api/collection/33841452-73042393-7784-49ed-a870-4287c648a960?action=share&creator=33841452)
 
 **Documentation**  
 can be found in the [Testing](https://github.com/dmikozzz/FitnessTrackerAPI/tree/dev/Testing) folder.
