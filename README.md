@@ -6,11 +6,48 @@
 
 This is a simple API for a fitness tracker.
 
-You will get to know my users and workout API after working with this project and reading this documentation.
+You will get to know my users and workout API after working with this project and reading this documentation.  
+
+
+My goal for this assignment is to get the grade **VG**.
 #
 ### MongoDB connection string
 
 > mongodb+srv://duricmitar:12345kyh@cluster0.u0p0rie.mongodb.net/
+#
+
+##  Dependencies
+```
+>npm init -y   
+```
+For creating a package.json file
+```
+npm i express mongoose
+```
+To install express and mongoose
+```
+npm install mongoose-paginate-v2
+```
+For our pagination
+```
+npm i express-rate-limit  
+```
+Needed for rate-limiting
+```
+npm install -g nodemon 
+```
+Not required but recommended if you do changes often in the js  
+instead of having to terminate and start the server.js every time,  
+nodemon restarts it automatically for you. 
+#
+## Postman
+
+**Test collection:**
+
+**Mock server collection:**
+
+**Documentation**  
+can be found in the [Testing](https://github.com/dmikozzz/FitnessTrackerAPI/tree/dev/Testing) folder.
 #
  ## Users
  The users API has a few functions and here I will explain them.
@@ -310,13 +347,15 @@ or if you have downloaded the JSON file you can choose to import JSON or CSV fil
 You can find the mock data in the mock_data folder.
 
 If you'd like to make your mock own data I would recommend Mockaroo where you would  
-for 
-#### users
+for  
+**users** 
+
 Add two fields, one with name and a Type like Full Name  
  and dailyActiveCaloriesGoal with the type Number and a min max of your preference  
  for the goals to be.
 
-#### workouts
+**workouts**  
+
 You would add four fields.  
 
 workout with the Type Custom List  
