@@ -1,6 +1,4 @@
 # Fitness Tracker API
-**TO BE UPDATED**
-#
 
 ## Introduction
 
@@ -12,8 +10,9 @@ You will get to know my users and workout API after working with this project an
 My goal for this assignment is to get the grade **VG**.
 #
 ### MongoDB connection string
-
-> mongodb+srv://duricmitar:12345kyh@cluster0.u0p0rie.mongodb.net/
+```
+ mongodb+srv://duricmitar:12345kyh@cluster0.u0p0rie.mongodb.net/
+ ```
 #
 
 ##  Dependencies
